@@ -1,0 +1,4 @@
+;; cluster S0#_#S0 [ max = S0=-31,561197 ] [ score:S0 = -31.561196632451296 ] [ score:length = 1116 ] 
+showName 1 0 1116 M S U S0#_#S0
+;; cluster S2#_#S0 [ max = S0=-33,273345 ] [ score:S0 = -33.27334453263693 ] [ score:length = 262 ] 
+showName 1 1126 262 F S U S2#_#S0

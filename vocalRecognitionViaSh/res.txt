@@ -1,0 +1,133 @@
+05:05.645                CONFIG| cmdLine: --fInputMask=./wav/test1min.wav --sOutputMask=./seg/test1min.seg --doCEClustering showName
+05:05.645 Diarization    INFO  | Diarization tuning	{main() / 1}
+05:05.645 Diarization    INFO  | Initialize segmentation	{initialize() / 1}
+05:05.652 MainTools      FINER | showName=showName	{splitHypotesis() / 1}
+05:05.656 Diarization    FINER | -------------------------------------------	{run() / 10}
+05:05.656 Diarization    FINER | --- showName ---	{run() / 10}
+05:05.656 Diarization    FINER | -------------------------------------------	{run() / 10}
+05:05.004 MSegInit       INFO  | Initialization of the segmentation	{make() / 10}
+05:05.004 MSegInit       FINER | check segment : 0 6504	{detectEqualFeatures() / 10}
+05:05.087 MSegInit       FINER | check segment : 0 6504	{detectLikelihoodProblem() / 10}
+05:05.134 Diarization    INFO  | --> segmentation method=GLR	{ester2Diarization() / 10}
+05:05.135 MSeg           INFO  | Segmentation	{make() / 10}
+05:05.136 MSeg           FINE  | 	 do Measures	{make() / 10}
+05:05.387 MSeg           FINE  | 	 do Borders	{make() / 10}
+05:05.396 MSeg           FINE  | 	 do Clusters	{make() / 10}
+05:05.399 MClust         INFO  | Clustering: l	{make() / 10}
+05:05.399 MClust         INFO  | BEGIN CLUSTERING date: Mon Feb 10 17:05:27 CET 2014 time in ms:1392048327399	{make() / 10}
+05:05.406 MClust         FINE  | 	merge: score = -284.3952370601369 ci = 0(S0) cj = 1(S1)	{gaussianHACRightToLeft() / 10}
+05:05.406 ClusterSet     INFO  | --> MERGE: S0 in S1	{mergeCluster() / 10}
+05:05.406 MClust         FINE  | 	merge: score = -448.7119183697007 ci = 0(S0) cj = 1(S2)	{gaussianHACRightToLeft() / 10}
+05:05.406 ClusterSet     INFO  | --> MERGE: S0 in S2	{mergeCluster() / 10}
+05:05.407 MClust         FINE  | 	merge: score = -390.8584913906715 ci = 0(S0) cj = 1(S3)	{gaussianHACRightToLeft() / 10}
+05:05.407 ClusterSet     INFO  | --> MERGE: S0 in S3	{mergeCluster() / 10}
+05:05.407 MClust         FINE  | 	merge: score = -523.27673079698 ci = 0(S0) cj = 1(S4)	{gaussianHACRightToLeft() / 10}
+05:05.407 ClusterSet     INFO  | --> MERGE: S0 in S4	{mergeCluster() / 10}
+05:05.408 MClust         FINE  | 	merge: score = -276.6153595408632 ci = 0(S0) cj = 1(S5)	{gaussianHACRightToLeft() / 10}
+05:05.408 ClusterSet     INFO  | --> MERGE: S0 in S5	{mergeCluster() / 10}
+05:05.408 MClust         FINE  | 	next : score = 52.53767756111279 ci = 0(S0) cj = 1(S6)	{gaussianHACRightToLeft() / 10}
+05:05.408 MClust         FINE  | 	merge: score = -164.19701336083403 ci = 1(S6) cj = 2(S7)	{gaussianHACRightToLeft() / 10}
+05:05.409 ClusterSet     INFO  | --> MERGE: S6 in S7	{mergeCluster() / 10}
+05:05.409 MClust         FINE  | 	merge: score = -246.48487903376292 ci = 1(S6) cj = 2(S8)	{gaussianHACRightToLeft() / 10}
+05:05.409 ClusterSet     INFO  | --> MERGE: S6 in S8	{mergeCluster() / 10}
+05:05.409 MClust         FINE  | 	merge: score = -200.90201426290525 ci = 1(S6) cj = 2(S9)	{gaussianHACRightToLeft() / 10}
+05:05.409 ClusterSet     INFO  | --> MERGE: S6 in S9	{mergeCluster() / 10}
+05:05.410 MClust         FINE  | 	merge: score = -257.58371471199825 ci = 1(S6) cj = 2(S10)	{gaussianHACRightToLeft() / 10}
+05:05.410 ClusterSet     INFO  | --> MERGE: S6 in S10	{mergeCluster() / 10}
+05:05.410 MClust         FINE  | 	merge: score = -430.4883041529247 ci = 1(S6) cj = 2(S11)	{gaussianHACRightToLeft() / 10}
+05:05.410 ClusterSet     INFO  | --> MERGE: S6 in S11	{mergeCluster() / 10}
+05:05.411 MClust         FINE  | 	merge: score = -224.13076640520285 ci = 1(S6) cj = 2(S12)	{gaussianHACRightToLeft() / 10}
+05:05.411 ClusterSet     INFO  | --> MERGE: S6 in S12	{mergeCluster() / 10}
+05:05.411 Diarization    FINER | method:CLUST_H_BIC thr:3.0	{clustering() / 10}
+05:05.411 MClust         INFO  | Clustering: h	{make() / 10}
+05:05.411 MClust         INFO  | BEGIN CLUSTERING date: Mon Feb 10 17:05:27 CET 2014 time in ms:1392048327411	{make() / 10}
+05:05.414 MClust         FINE  | merge = 0 score = -600.3761026098089 ci = 0(S0) cj = 1(S6)	{gaussianHAC() / 10}
+05:05.414 ClusterSet     INFO  | --> MERGE: S0 in S6	{mergeCluster() / 10}
+05:05.415 MTrainInit     INFO  | Initialize models	{make() / 10}
+05:05.415 MTrainInit     FINE  | 	 initialize cluster=S0	{make() / 10}
+05:05.418 MTrainEM       INFO  | Train models using EM	{make() / 10}
+05:05.418 MTrainEM       FINE  | 	 train cluster=S0	{compute() / 10}
+05:05.456 GMMFactory     FINER | NbComp=8 first llh=-2.113888405289491	{getEM() / 10}
+05:05.475 GMMFactory     FINER | 	 i=0 llh=-0.03408564178522728 delta=2.0798027635042637	{getEM() / 10}
+05:05.491 GMMFactory     FINER | 	 i=1 llh=0.37339801483555346 delta=0.40748365662078073	{getEM() / 10}
+05:05.507 GMMFactory     FINER | 	 i=2 llh=0.5070570306899306 delta=0.13365901585437712	{getEM() / 10}
+05:05.523 GMMFactory     FINER | 	 i=3 llh=0.5683086251893198 delta=0.06125159449938922	{getEM() / 10}
+05:05.539 GMMFactory     FINER | 	 i=4 llh=0.5961937103187989 delta=0.02788508512947907	{getEM() / 10}
+05:05.555 GMMFactory     FINER | 	 i=5 llh=0.6111064968708859 delta=0.014912786552087054	{getEM() / 10}
+05:05.564 GMMFactory     FINER | 	 i=6 llh=0.6221733177539811 delta=0.011066820883095185	{getEM() / 10}
+05:05.573 GMMFactory     FINER | 	 i=7 llh=0.6316000167900035 delta=0.009426699036022446	{getEM() / 10}
+05:05.576 MDecode        INFO  | fast decoding, Number of GMM=1	{make() / 10}
+05:05.577 MDecode        FINE  | 	 decoder.accumulation starting at 0 to 6502	{make() / 10}
+05:05.603 MDecode        FINE  | 	 decoder.get result	{make() / 10}
+05:05.604 MfccMlpConcat  INFO  | Adjust the bounady of segmentation	{make() / 10}
+05:05.633 MDecode        INFO  | fast decoding, Number of GMM=8	{make() / 10}
+05:05.633 MDecode        FINE  | 	 decoder.accumulation starting at 0 to 6503	{make() / 10}
+05:05.329 MDecode        FINE  | 	 decoder.get result	{make() / 10}
+05:05.331 SFilter        INFO  | Filter segmentation using: j	{make() / 10}
+05:05.366 SFilter        FINER | remove segment less than param.segMinLenSpeech=150	{removeSmall() / 10}
+05:05.380 MScore         INFO  | Compute Score	{make() / 10}
+05:05.380 MScore         FINER | GMM size:4	{make() / 10}
+05:05.951 MScore         FINER | clustername = S0 name=MS =-31.763347053696126	{make() / 10}
+05:05.951 MScore         FINER | clustername = S0 name=MT =-32.65202380741184	{make() / 10}
+05:05.951 MScore         FINER | clustername = S0 name=FS =-32.657684058181424	{make() / 10}
+05:05.952 MScore         FINER | clustername = S0 name=FT =-33.25146790319766	{make() / 10}
+05:05.125 GMMFactory     FINER | i=0 llh=-32.78870780167002 Cluster name=S0 cluster length=6438	{getMAP() / 10}
+05:05.741 GMMFactory     FINER | i=1 llh=-31.74156581046147 gain=1.0471419912085516 Cluster name=S0 cluster length=6438	{getMAP() / 10}
+05:05.355 GMMFactory     FINER | i=2 llh=-31.42432640129358 gain=0.3172394091678896 Cluster name=S0 cluster length=6438	{getMAP() / 10}
+05:05.965 GMMFactory     FINER | i=3 llh=-31.277666117349604 gain=0.14666028394397657 Cluster name=S0 cluster length=6438	{getMAP() / 10}
+05:05.625 GMMFactory     FINER | i=4 llh=-31.1917167111561 gain=0.08594940619350311 Cluster name=S0 cluster length=6438	{getMAP() / 10}
+05:05.626 GMMFactory     FINER | 	{getMAP() / 10}
+05:05.627 Diarization    FINE  | first showName key=l=2.0 h=3.0 d=250.0 clrScore=1.7976931348623157E308 clrErrorRate=100.0 clrSize=1	{speakerClustering() / 10}
+05:05.627 Diarization    FINER | showName key=l=2.0 h=3.0 d=250.0 show done 	{speakerClustering() / 10}
+05:05.627 ClusterSet     INFO  | --> write ClusterSet : ./seg/test1min.seg / showName	{write() / 10}
+05:05.815                CONFIG| cmdLine: --help --sInputMask=./seg/test1min.seg --fInputMask=./wav/test1min.wav --sOutputMask=test1min.ident.seg --fInputDesc=audio16kHz2sphinx,1:3:2:0:0:0,13,1:1:300:4 --tInputMask=./modele/modeledetest1min.gmm --sTop=5,ubm.gmm --sSetLabel=add testShow
+05:05.815                CONFIG|  ====================================================== 
+05:05.815                CONFIG| info[program] 	 name = Identification
+05:05.815                CONFIG| [options] show:testShow
+05:05.816                CONFIG| --fInputMask 	 Input featureSet: mask = ./wav/test1min.wav [fr.lium.spkDiarization.parameter.ParameterAudioInputFeature]
+05:05.816                CONFIG| --fInputDesc 	 Input featureSet: description (type[:deltatype][,s:e:ds:de:dds:dde,dim,c:r:wSize:method]) = audio16kHz2sphinx:sphinx,1:3:2:0:0:0,13,1:1:300:4 [fr.lium.spkDiarization.parameter.ParameterAudioInputFeature]
+05:05.816                CONFIG| 	 	 type [spro4,htk,sphinx,gztxt,featureSetTransformation,audio8kHz2sphinx,audio16kHz2sphinx,audio22kHz2sphinx,audio44kHz2sphinx,audio48kHz2sphinx] = audio16kHz2sphinx (6)
+05:05.816                CONFIG| 	 	 deltaType [spro4,htk,sphinx] = sphinx (2)
+05:05.816                CONFIG| 	 	 static [0=not present,1=present ,3=to be removed] = 1
+05:05.816                CONFIG| 	 	 energy [0,1,3] = 3
+05:05.817                CONFIG| 	 	 delta [0,1,2=computed on the fly,3] = 2
+05:05.817                CONFIG| 	 	 delta energy [0,1,2=computed on the fly,3] = 0
+05:05.817                CONFIG| 	 	 delta delta [0,1,2,3] = 0
+05:05.817                CONFIG| 	 	 delta delta energy [0,1,2,3] = 0
+05:05.817                CONFIG|  	 	 file dim = 13
+05:05.817                CONFIG|  	 	 normalization, center [0,1] = 1
+05:05.817                CONFIG|  	 	 normalization, reduce [0,1] = 1
+05:05.818                CONFIG|  	 	 normalization, window size = 300
+05:05.818                CONFIG| 	 	 normalization, method [0 (segment), 1 (cluster), 2 (sliding), 3 (warping)] =4
+05:05.818                CONFIG| --fInputMemoryOccupationRate 	 Input featureSet: memory occupation rate of the feature in the java virtual machine = ./wav/test1min.wav [fr.lium.spkDiarization.parameter.ParameterAudioInputFeature]
+05:05.818                CONFIG| --fInputSpeechThr 	 Input featureSet: silence segmentation method [E,BIGAUSSIAN,None] = None(2) [fr.lium.spkDiarization.parameter.ParameterAudioInputFeature]
+05:05.818                CONFIG| --fInputSpeechMethod 	 Input featureSet: silence segmentation method [E,BIGAUSSIAN,None] = None(2) [fr.lium.spkDiarization.parameter.ParameterAudioInputFeature]
+05:05.818                CONFIG|  ------------------------------------------------------ 
+05:05.819                CONFIG| --sInputMask 	 Input segmentation file mask = ./seg/test1min.seg [fr.lium.spkDiarization.parameter.ParameterSegmentationInputFile]
+05:05.819                CONFIG| --sInputFormat 	 Input segmentation file format = seg,ISO-8859-1 ([seg,bck,ctl,saus.seg,seg.xml,media.xml,repere.xml,eger.hyp], [ISO-8859-1,UTF8]) [fr.lium.spkDiarization.parameter.ParameterSegmentationInputFile]
+05:05.819                CONFIG| --sInputRate 	 Input segmentation file rate = 100 [fr.lium.spkDiarization.parameter.ParameterSegmentationInputFile]
+05:05.819                CONFIG| --sOutputMask 	 Output segmentation file mask = test1min.ident.seg [fr.lium.spkDiarization.parameter.ParameterSegmentationOutputFile]
+05:05.819                CONFIG| --sOutputFormat 	 Output segmentation file format = seg,ISO-8859-1 ([seg,bck,ctl,saus.seg,seg.xml,media.xml,repere.xml,eger.hyp], [ISO-8859-1,UTF8]) [fr.lium.spkDiarization.parameter.ParameterSegmentationOutputFile]
+05:05.819                CONFIG| --sOutputRate 	 Output segmentation file rate = 100 [fr.lium.spkDiarization.parameter.ParameterSegmentationOutputFile]
+05:05.819                CONFIG|  ------------------------------------------------------ 
+05:05.820                CONFIG| --tInputMask 	 Input model mask = ./modele/modeledetest1min.gmm
+05:05.820                CONFIG| --tInputModelType 	 Input model format [lium,alize,alizeXML,iv_txt] = 0
+05:05.821                CONFIG| --sScoreThr 	  = -1.7976931348623157E308 [.ParameterScore]
+05:05.821                CONFIG| --sGender 	  = false [.ParameterScore]
+05:05.821                CONFIG| --sByCluster 	  = false [.ParameterScore]
+05:05.821                CONFIG| --sTNorm 	  = false [.ParameterScore]
+05:05.821                CONFIG| --sMAPNorm [meanTarget:stdTarget:meanNonTarget:stdNonTarget]= 0.0:1.0,0.0:1.0,0.1 [fr.lium.spkDiarization.parameter.ParameterScore]
+05:05.821                CONFIG| --sZNorm 	  = false [.ParameterScore]
+05:05.821                CONFIG| --sLLRatio 	  = false [.ParameterScore]
+05:05.822                CONFIG| --sBySegment 	  = false [.ParameterScore]
+05:05.822                CONFIG| --sSetLabel [none,add,remplace] = add [fr.lium.spkDiarization.parameter.ParameterScore]
+05:05.822                CONFIG| --sModelList 	  =  [.ParameterScore]
+05:05.822                CONFIG|  ------------------------------------------------------ 
+05:05.882 Identification INFO  | Compute Score	{make() / 1}
+05:05.882 Identification FINER | GMM size:1	{make() / 1}
+05:05.760 Identification INFO  | score brute model 0: -199664.28126572564 len: 6438	{make() / 1}
+05:05.760 Identification INFO  | score S0: -31.013401874141913	{make() / 1}
+05:05.761 Identification FINER | cluster name=S0 new_name=S0#_#S0	{selectionMax() / 1}
+05:05.764 Identification INFO  | ADDIDENT name: s0#_#s0 score:-31.013401874141913 gmm:S0#_#S0 cluster:S0	{addScore() / 1}
+05:05.764 ClusterSet     INFO  | --> write ClusterSet : test1min.ident.seg / testShow	{write() / 1}
+
