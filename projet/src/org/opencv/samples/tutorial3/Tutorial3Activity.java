@@ -46,7 +46,6 @@ public class Tutorial3Activity extends Activity implements CvCameraViewListener2
     private Tutorial3View mOpenCvCameraView;
     private SubMenu sousMenu1;
     private SubMenu sousMenu2;
-    private SubMenu sousMenu3;
     private Mat last;
     private ArrayList<Scene> scenes = new ArrayList<Scene>();
     Scene refScene;
@@ -126,9 +125,10 @@ public class Tutorial3Activity extends Activity implements CvCameraViewListener2
     
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        this.sousMenu1 = menu.addSubMenu(1,Menu.FIRST, 0, "Retour");
-        this.sousMenu2 = menu.addSubMenu(1,Menu.FIRST+1,1,"Comparer");
-        this.sousMenu3 = menu.addSubMenu(1,Menu.FIRST+2,1,"Référence");
+        this.sousMenu1 = menu.addSubMenu("Retour");
+        sousMenu1.add(1, Menu.FIRST, 0, "retour");
+        this.sousMenu2 = menu.addSubMenu("Comparer");
+        sousMenu2.add(1,Menu.FIRST+1,1,"comparer");
         return true;
     }
     
@@ -141,9 +141,6 @@ public class Tutorial3Activity extends Activity implements CvCameraViewListener2
     	case Menu.FIRST+1:
     		compareClick(v);
     		break;
-    	case Menu.FIRST+2:
-    		takePic2(v);
-    		break;
     	}
     	return super.onOptionsItemSelected(item);
     }
@@ -153,9 +150,16 @@ public class Tutorial3Activity extends Activity implements CvCameraViewListener2
     public boolean onTouch(View v, MotionEvent event) {
         Log.i(TAG,"onTouch event");
         
-        //take pict 1
+        //pic 1
         Scene scene = new Scene(last);
 		scenes.add(scene);
+		
+		//pic 2
+		Mat im = last.clone();
+		Bitmap bmp = Bitmap.createBitmap(im.cols(), im.rows(),
+				Bitmap.Config.ARGB_8888);
+		Utils.matToBitmap(im, bmp);
+		refScene = new Scene(last);
 		
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd_HH-mm-ss");
         String currentDateandTime = sdf.format(new Date());
@@ -165,16 +169,6 @@ public class Tutorial3Activity extends Activity implements CvCameraViewListener2
         Toast.makeText(this, fileName + " saved", Toast.LENGTH_SHORT).show();
         return false;
     }
-    
-    public void takePic2(View w) {
-		Mat im = last.clone();
-		// Imgproc.cvtColor(im, im, Imgproc.COLOR_BGR2RGB);
-		Bitmap bmp = Bitmap.createBitmap(im.cols(), im.rows(),
-				Bitmap.Config.ARGB_8888);
-		Utils.matToBitmap(im, bmp);
-		//matchDrawArea.setImageBitmap(bmp);
-		refScene = new Scene(last);
-	}
     
 	public void compareClick(View w) {
 		if (scenes.size() == 0) {
@@ -274,12 +268,12 @@ public class Tutorial3Activity extends Activity implements CvCameraViewListener2
 
 			final Dialog settingsDialog = new Dialog(context);
 			settingsDialog.getWindow().requestFeature(Window.FEATURE_NO_TITLE);
-			settingsDialog.setContentView(getLayoutInflater().inflate(R.layout.image_layout, null));
-			ImageView im = (ImageView) settingsDialog.findViewById(R.id.imagePopup);
-			Button dismiss = (Button) settingsDialog.findViewById(R.id.dismissBtn);
-			TextView info = (TextView) settingsDialog.findViewById(R.id.infoText);
+//			settingsDialog.setContentView(getLayoutInflater().inflate(R.layout.image_layout, null));
+//			ImageView im = (ImageView) settingsDialog.findViewById(R.id.imagePopup);
+//			Button dismiss = (Button) settingsDialog.findViewById(R.id.dismissBtn);
+//			TextView info = (TextView) settingsDialog.findViewById(R.id.infoText);
 				
-			im.setImageBitmap(bmp);
+			//im.setImageBitmap(bmp);
 			/*dismiss.setOnClickListener(new OnClickListener() {
 
 				@Override
@@ -288,7 +282,7 @@ public class Tutorial3Activity extends Activity implements CvCameraViewListener2
 				}
 			});*/
 
-			info.setText(maxData.toString());
+			//info.setText(maxData.toString());
 
 			settingsDialog.show();
 
