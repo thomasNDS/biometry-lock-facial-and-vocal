@@ -1,0 +1,33 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fond"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".LesUtilisateurs" >
+
+    <TextView
+        android:id="@+id/consigne"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="31dp"
+        android:text="Les utilisateurs de cette application"
+        android:textStyle="bold" />
+
+    <ListView
+        android:id="@+id/listDesUtilsateurs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/consigne"
+        android:layout_below="@+id/consigne"
+        android:layout_marginLeft="18dp"
+        android:layout_marginTop="43dp" >
+    </ListView>
+
+</RelativeLayout>
