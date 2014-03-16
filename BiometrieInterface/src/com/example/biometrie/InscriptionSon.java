@@ -13,7 +13,10 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.MediaController;
 import android.widget.Toast;
-import 	android.media.AudioRecord;
+import android.media.AudioRecord;
+import fr.lium.spkDiarization.programs.*;
+
+
 public class InscriptionSon extends Activity {
 
 	Button enregDebut = null;
@@ -76,9 +79,57 @@ private OnClickListener FinEnreg = new View.OnClickListener() {
 				e.printStackTrace();
 			} 
 	        
-	        Toast.makeText(getApplicationContext(),"Son enregistré avec succès", Toast.LENGTH_LONG).show();
+	        Toast.makeText(getApplicationContext(),"Son enregistrï¿½ avec succï¿½s", Toast.LENGTH_LONG).show();
 		}
 	};
+	
+private OnClickListener FinInscription = new View.OnClickListener() {
+	
+	
+	
+	/* Checks if external storage is available for read and write */
+    public boolean isExternalStorageWritable() {
+        String state = Environment.getExternalStorageState();
+        if (Environment.MEDIA_MOUNTED.equals(state)) {
+            return true;
+        }
+        Toast.makeText(getApplicationContext(),"Not writable", Toast.LENGTH_LONG).show();
+        return false;
+    }
+
+    /* Checks if external storage is available to at least read */
+    public boolean isExternalStorageReadable() {
+        String state = Environment.getExternalStorageState();
+        if (Environment.MEDIA_MOUNTED.equals(state)
+                || Environment.MEDIA_MOUNTED_READ_ONLY.equals(state)) {
+            return true;
+        }
+        Toast.makeText(getApplicationContext(),"Not readable", Toast.LENGTH_LONG).show();
+        return false;
+    }
+	
+	
+	@Override
+	public void onClick(View v) {
+		//Path to data
+		isExternalStorageReadable();
+		isExternalStorageWritable();
+		String path = Environment.getExternalStorageDirectory().getAbsolutePath()
+				 + "/Music/";
+		String sousMonde = "sousMondeREAL.seg";
+		String enregWave = "sousMonde.wav";
+		String ubm = "ubm.gmm";
+		String[] args = {"--help","--sInputMask="+path+sousMonde, "--fInputMask="+path+enregWave, "--fInputDesc=audio16kHz2sphinx,1:3:2:0:0:0,13,1:1:300:4",  "--emInitMethod=copy" ,"--tInputMask="+path+ubm, "--tOutputMask="+path+"initGmm"+".init.gmm" ,"speakers"};
+		try {
+			MTrainInit.main(args);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		// TODO Auto-generated method stub
+		
+	}
+};
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -88,11 +139,11 @@ private OnClickListener FinEnreg = new View.OnClickListener() {
 		bufferSize = AudioRecord.getMinBufferSize(8000,AudioFormat.CHANNEL_CONFIGURATION_MONO,AudioFormat.ENCODING_PCM_16BIT);
 		enregDebut = (Button)findViewById(R.id.buttonPlayEnregistrement);
 		enregFin = (Button)findViewById(R.id.buttonStopEnregistrement);
+		finInscription = (Button)findViewById(R.id.buttonFinInscription);
 		
 		enregDebut.setOnClickListener(touchListenerEnre);
 		enregFin.setOnClickListener(FinEnreg);
-		
-		finInscription = (Button)findViewById(R.id.buttonFinInscription);
+		finInscription.setOnClickListener(FinInscription);
 		
 		Bundle bundle = this.getIntent().getExtras();
 		Database db = new Database();
