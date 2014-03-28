@@ -13,7 +13,7 @@ Structure
 
 The project is separate in two app's for the moment : 
 *  [Facial lock](facial-Recognition): complete and works
-*  Vocal lock: interface  works but  not the vocal recognition 
+*  Vocal lock: interface  works but  not the vocal recognition. Available in the branch : vocal.
 
 See more in corresponding subpages.
 
