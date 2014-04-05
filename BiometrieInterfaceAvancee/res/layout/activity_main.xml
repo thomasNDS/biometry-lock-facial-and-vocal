@@ -1,0 +1,112 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_marginLeft="3dp"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/texteee"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:gravity="center"
+        android:text="Bienvenue"
+        android:textColor="#112233"
+        android:textSize="25sp" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="45dp"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/inscription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dip"
+            android:layout_marginRight="25dip"
+            android:layout_marginTop="25dp"
+            android:layout_weight="2"
+            android:text="Inscription" />
+
+        <Button
+            android:id="@+id/connexion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dip"
+            android:layout_marginRight="25dip"
+            android:layout_marginTop="25dp"
+            android:layout_weight="2"
+            android:text="Conexion" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.28"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/enregistrer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dip"
+            android:layout_marginRight="25dip"
+            android:layout_marginTop="25dp"
+            android:text="Debut" />
+        
+        <Button
+            android:id="@+id/enregistrerFin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dip"
+            android:layout_marginRight="25dip"
+            android:layout_marginTop="25dp"
+            android:text="fin" />
+
+        <Button
+            android:id="@+id/photer"
+            android:layout_width="69dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dip"
+            android:layout_marginRight="25dip"
+            android:layout_marginTop="25dp"
+            android:text="Prendre une photo" />
+
+        
+    </LinearLayout>
+    
+     <LinearLayout
+         android:layout_width="fill_parent"
+         android:layout_height="wrap_content"
+         android:layout_marginTop="45dp"
+         android:layout_weight="0.47"
+         android:orientation="horizontal" >
+
+         <MediaController
+             android:id="@+id/sonEnregistre"
+             android:layout_width="wrap_content"
+             android:layout_height="88dp"
+             android:layout_weight="1.09" >
+         </MediaController>
+
+         <ImageView
+             android:id="@+id/imageView1"
+             android:layout_width="wrap_content"
+             android:layout_height="160dp"
+             android:layout_marginLeft="0dp"
+             android:layout_marginTop="0dp"
+             android:layout_weight="1"
+             android:contentDescription="@string/hello_world"
+             android:src="@drawable/ic_launcher" />
+     </LinearLayout>
+
+</LinearLayout>
